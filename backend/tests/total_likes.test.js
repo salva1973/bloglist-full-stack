@@ -52,7 +52,7 @@ describe('total likes', () => {
     },
   ]
 
-  test('when list has six blogs, equals the likes of all of them', () => {
+  test('when list has several blogs, equals the sum of the likes of all of them', () => {
     const result = listHelper.totalLikes(blogs)
     expect(result).toBe(36)
   })
