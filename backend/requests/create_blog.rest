@@ -1,8 +1,9 @@
 POST http://localhost:3003/api/blogs HTTP/1.1
-content-type: application/json
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG4iLCJpZCI6IjY0NzNjMzRmZDNlODY1M2FkNGZhMTQ0OSIsImlhdCI6MTY4NTMwODM0OSwiZXhwIjoxNjg1MzExOTQ5fQ.hAXlywUrHYPD-O_YjP559wpuhOxhlLhXqORAREwp-mk
 
 {    
-    "title": "The Art of War",
+    "title": "The Art of War Revisited",
     "author": "John Wick",
     "url": "https://www.bestblogs.com/1134",
     "likes": 1084

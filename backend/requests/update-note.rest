@@ -1,0 +1,10 @@
+PUT http://localhost:3003/api/blogs/6473c65388a925b9f05a6df1 HTTP/1.1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhbHZhIiwiaWQiOiI2NDczYzMzM2QzZTg2NTNhZDRmYTE0NDUiLCJpYXQiOjE2ODUzMTE4OTgsImV4cCI6MTY4NTMxNTQ5OH0.toI5PxGTHUEI-aUFSuLDcV3XkRWl1i7QiC2WSKG299E
+
+{    
+    "title": "The Art of War Revisited in 2050",
+    "author": "John Wick",
+    "url": "https://www.bestblogs.com/1134",
+    "likes": 1084
+}

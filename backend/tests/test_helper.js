@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken')
+
 const Blog = require('../models/blog')
 const User = require('../models/user')
 
@@ -39,9 +41,22 @@ const usersInDb = async () => {
   return users.map((u) => u.toJSON())
 }
 
+const extractUser = async (token) => {
+  const decodedToken = jwt.verify(token, process.env.SECRET)
+  if (!decodedToken.id) {
+    return null
+  }
+  const user = await User.findById(decodedToken.id)
+  if (!user) {
+    return null
+  }
+  return user
+}
+
 module.exports = {
   initialBlogs,
   nonExistingId,
   blogsInDb,
   usersInDb,
+  extractUser,
 }
