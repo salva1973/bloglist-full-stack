@@ -45,7 +45,7 @@ const App = () => {
     }
   }, [])
 
-  const handleLogin = async ({username, password}) => {    
+  const handleLogin = async ({ username, password }) => {
     try {
       const user = await loginService.login({
         username,
@@ -53,7 +53,7 @@ const App = () => {
       })
       window.localStorage.setItem('loggedBlogappUser', JSON.stringify(user))
       blogService.setToken(user.token)
-      setUser(user)            
+      setUser(user)
     } catch (exception) {
       setInfoMessage({ message: 'Wrong credentials', type: 'error' })
       setTimeout(() => {
@@ -67,11 +67,11 @@ const App = () => {
     setUser(null)
   }
 
-  const addBlog = async (blogObject) => {
-    blogFormRef.current.toggleVisibility()
+  const addBlog = async (blogObject) => {    
     try {
       const returnedBlog = await blogService.create(blogObject)
       setBlogs(blogs.concat(returnedBlog))
+      blogFormRef.current.toggleVisibility()
       setInfoMessage({
         message: `A new blog ${blogObject.title} by ${blogObject.author} added`,
         type: 'info',
@@ -80,13 +80,25 @@ const App = () => {
         setInfoMessage(emptyMessage)
       }, 5000)
     } catch (error) {
-      setInfoMessage({
-        message: 'Please provide the title, author and url',
-        type: 'error',
-      })
-      setTimeout(() => {
-        setInfoMessage(emptyMessage)
-      }, 5000)
+      if (error.response.data.error === 'token expired') {
+        window.localStorage.removeItem('loggedBlogappUser')
+        setUser(null)
+        setInfoMessage({
+          message: 'Authentication expired. Please login again.',
+          type: 'error',
+        })
+        setTimeout(() => {
+          setInfoMessage(emptyMessage)
+        }, 5000)
+      } else {
+        setInfoMessage({
+          message: 'Please provide the title, author and url',
+          type: 'error',
+        })
+        setTimeout(() => {
+          setInfoMessage(emptyMessage)
+        }, 5000)
+      }
     }
   }
 

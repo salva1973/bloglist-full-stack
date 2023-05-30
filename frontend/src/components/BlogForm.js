@@ -50,7 +50,7 @@ const BlogForm = ({ createBlog }) => {
               type="text"
               value={url}
               id="url"
-              onChange={(event) => setTitle(event.target.value)}
+              onChange={(event) => setUrl(event.target.value)}
             />
           </div>
 
