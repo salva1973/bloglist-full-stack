@@ -26,14 +26,28 @@ const blog = new Blog({
   likes: 1084,
 })
 
-blog.save().then(() => {
-  console.log('blog saved!')
-  mongoose.connection.close()
-})
+const saveBlog = async () => {
+  try {
+    await blog.save()
+    console.log('blog saved!')
+    mongoose.connection.close()
+  } catch (error) {
+    // Handle error if necessary
+  }
+}
 
-// Blog.find({}).then((result) => {
-//   result.forEach((blog) => {
-//     console.log(blog)
-//   })
-//   mongoose.connection.close()
-// })
+const fetchBlogs = async () => {
+  try {
+    const result = await Blog.find({})
+    result.forEach((blog) => {
+      console.log(blog)
+    })
+    mongoose.connection.close()
+  } catch (error) {
+    // Handle error if necessary
+    console.error(error)
+  }
+}
+
+saveBlog()
+fetchBlogs()
