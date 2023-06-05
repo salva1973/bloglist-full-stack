@@ -94,6 +94,8 @@ describe('when there are initially some blogs saved', () => {
       const blogsAtStart = await helper.blogsInDb()
 
       const blogToView = blogsAtStart[0]
+      blogToView.user = JSON.stringify(blogToView.user)
+      blogToView.user = blogToView.user.replace(/^"(.*)"$/, '$1') // workaround
 
       const resultBlog = await api
         .get(`/api/blogs/${blogToView.id}`)

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import PropTypes from 'prop-types'
+
 import './LoginForm.css'
 
 const LoginForm = ({ login }) => {
@@ -14,7 +16,7 @@ const LoginForm = ({ login }) => {
     })
 
     setUsername('')
-    setPassword('')    
+    setPassword('')
   }
 
   return (
@@ -47,12 +49,16 @@ const LoginForm = ({ login }) => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit" className="login-form-button">
+        <button id="login-button" type="submit" className="login-form-button">
           Login
         </button>
       </form>
     </div>
   )
+}
+
+LoginForm.propTypes = {
+  login: PropTypes.func.isRequired,
 }
 
 export default LoginForm

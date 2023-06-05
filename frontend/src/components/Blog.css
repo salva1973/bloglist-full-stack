@@ -1,0 +1,23 @@
+.blog-container {
+  padding-top: 10px;
+  padding-left: 2px;
+  border: solid;
+  border-width: 1px;
+  margin-bottom: 5px;
+}
+
+.blog-title {
+  display: inline;
+}
+
+.blog-author {
+  display: inline;
+}
+
+.blog-likes {
+  display: inline;
+}
+
+.blog-likes-value {
+  display: inline;
+}

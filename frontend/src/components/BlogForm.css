@@ -24,8 +24,9 @@ input {
   border-radius: 3px;
 }
 
-button {
-  padding: 6px;
+.blog-button {
+  padding: 2px;
+  margin-left: 5px;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -34,6 +35,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.blog-button:hover {
   background-color: #45a049;
 }
