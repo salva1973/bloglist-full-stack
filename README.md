@@ -171,6 +171,8 @@ test('Test description...', async () => {
 
 ### Frontend End-To-End Testing
 
+[https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Cypress-Can-Be-Simple-Sometimes]
+
 ```sh
 npm uninstall cypress
 rm -rf /Users/(whoami)/Library/Caches/Cypress/

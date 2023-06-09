@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/blogs HTTP/1.1
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG4iLCJpZCI6IjY0NzNjMzRmZDNlODY1M2FkNGZhMTQ0OSIsImlhdCI6MTY4NTMwODM0OSwiZXhwIjoxNjg1MzExOTQ5fQ.hAXlywUrHYPD-O_YjP559wpuhOxhlLhXqORAREwp-mk
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhbHZhIiwiaWQiOiI2NDczYzMzM2QzZTg2NTNhZDRmYTE0NDUiLCJpYXQiOjE2ODYwNjUzNTgsImV4cCI6MTY4NjA2ODk1OH0.FK5xDWxUCl__TDO2jf8EDegdjCuJp9Jyyvh-eftJ3fw
 
 {    
     "title": "The Art of War Revisited",
